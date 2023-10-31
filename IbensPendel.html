@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ibens pendel</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pendel</title>
+    </head>
+
+    <body>
+        <h1>Oppgave 2 /|\ Pendel </h1>
+        <div>
+            <div>Oppgave 2 a</div>
+            <input type="number" id="inputLength" placeholder="Tast inn lengde📏...">
+            <button onclick="PendelTime()">...og trykk på knappen <br>for å regne ut tid ⏱️</button>
+            <div id="answerTime"></div>
+            <pre id="displayCodeTime"></pre>
+        </div>
+        <hr>
+        <div>
+            <div>Oppgave 2 b</div>
+            <input type="number" id="inputTime" placeholder="Tast inn tid⏱️...">
+            <button onclick="PendelLength()">...og trykk på knappen <br> for å regne ut lengde 📏</button>
+            <div id="answerLength"></div>
+            <pre id="displayCodeLength"></pre>
+        </div>
+
+        <script>
+            let g = 9.81;
+
+            function PendelTime() {
+                let pLength = document.getElementById('inputLength').value;
+                let pTime = 2 * Math.PI * Math.sqrt(pLength / g);
+                document.getElementById('answerTime').innerHTML = `Tiden blir ${pTime.toFixed(2)} når lengden er ${pLength}`;
+
+                document.getElementById('displayCodeTime').textContent = PendelTime.toString();
+            }
+
+            function PendelLength() {
+                let pTime = document.getElementById('inputTime').value;
+                let pLength = (pTime * pTime * g) / (4 * Math.PI * Math.PI);
+                document.getElementById('answerLength').innerHTML = `Lengden blir ${pLength.toFixed(2)} når tiden er ${pTime}`;
+
+                document.getElementById('displayCodeLength').textContent = PendelLength.toString();
+            }
+        </script>
+
+    </body>
+
+    </html>
+
+</body>
+
+</html>
